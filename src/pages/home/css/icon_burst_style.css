@@ -1,0 +1,78 @@
+.icon-container {
+    transform-style: preserve-3d;
+    perspective: 300px;
+}
+
+.btn-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icons {
+    font-size: 20px;
+    position: absolute;
+    opacity: 0;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* transform: translateZ(-100px); */
+    top: var(--icon-top);
+    left: var(--icon-left);
+    animation: var(--icon-animation-direction-vertical) var(--icon-animation-time) linear var(--icon-animation-delay) infinite,
+        var(--icon-animation-direction-horizontal) var(--icon-animation-time) linear var(--icon-animation-delay) infinite;
+}
+
+@keyframes up {
+    40% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(50% - var(--icon-vertical-thresold));
+        opacity: 0;
+        transform: translateZ(800px);
+        /* font-size: 128px; */
+    }
+}
+
+@keyframes down {
+    40% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(50% + var(--icon-vertical-thresold));
+        transform: translateZ(800px);
+        /* font-size: 128px; */
+    }
+}
+
+@keyframes left {
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(50% - var(--icon-horizontal-thresold));
+    }
+}
+
+@keyframes right {
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(50% + var(--icon-horizontal-thresold));
+    }
+}
